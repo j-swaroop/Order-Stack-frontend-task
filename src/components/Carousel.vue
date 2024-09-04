@@ -71,12 +71,8 @@ const currentSlide = ref(0);
 let autoplayId = null;
 
 const itemStyle = computed(() => ({
-  width: `${
-    props.carouselItems.length * (props.width || props.slidesToShow * 100)
-  }px`,
-  transform: `translateX(-${
-    currentSlide.value * (props.width || props.slideWidth)
-  }px)`,
+  width: `${props.carouselItems.length * props.width}px`,
+  transform: `translateX(-${currentSlide.value * props.width}px)`,
   transition: "transform 0.5s ease",
 }));
 
@@ -159,18 +155,17 @@ onMounted(() => {
   margin-left: auto;
   margin-right: auto;
   /* width: 100%; */
-  min-width: 140rem;
+  max-width: 140rem;
   margin-top: 5rem;
 }
 
 .carousel-container {
   overflow: hidden;
   width: 100%;
-  
 }
 
 .carousel-box-container {
-  overflow: hidden;
+  overflow: initial;
   display: flex;
   width: 100%;
   // min-width: 120rem;
@@ -182,7 +177,7 @@ onMounted(() => {
 
 .carousel-slide {
   margin-right: 10px;
-  // width: 400px;
+  // width: calc((100% - 1rem * 3) / 4);
   /* width: auto; */
   /* width: calc((100% - 10px * 4) / 5); */
 }

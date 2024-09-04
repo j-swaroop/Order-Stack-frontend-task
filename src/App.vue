@@ -4,6 +4,7 @@
     :slidesToShow="4"
     :slide-width="300"
     :width="300"
+    
     :autoplay="true"
     :autoPlayDelay="2000"
     :slidesToScroll="1"
